@@ -11,12 +11,12 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: rgba(158, 117, 138, 0.78);
 }
 
 .topContent{
     margin-bottom: 40px;
     font-size: 200%;
     text-align: center;
-    color: slateblue;
+    color: purple;
 }

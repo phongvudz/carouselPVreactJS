@@ -4,13 +4,6 @@ import "../style/Carousel.css";
 const Carousel = ({ images }) => {
   const [current, setCurrent] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
-
-  const slideRight = () => {
-    setCurrent(current === images.length - 1 ? 0 : current + 1);
-  };
-  const slideLeft = () => {
-    setCurrent(current === 0 ? images.length - 1 : current - 1);
-  };
   let timeOut = null;
   useEffect(() => {
     timeOut =
@@ -20,6 +13,12 @@ const Carousel = ({ images }) => {
       }, 2500);
   });
 
+  const slideLeft = () => {
+    setCurrent(current === 0 ? images.length - 1 : current - 1);
+  };
+  const slideRight = () => {
+    setCurrent(current === images.length - 1 ? 0 : current + 1);
+  };
   return (
     <div
       className="carousel"
@@ -54,13 +53,13 @@ const Carousel = ({ images }) => {
         <div className="carousel__pagination">
           {images.map((_, index) => (
             <div
-              key={index}
               className={
                 index === current
                   ? "pagination__dot pagination__dot-active"
                   : "pagination__dot"
               }
               onClick={() => setCurrent(index)}
+              key={index}
             ></div>
           ))}
         </div>
