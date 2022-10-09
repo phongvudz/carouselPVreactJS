@@ -1,0 +1,94 @@
+.carousel{
+    display: flex;
+    height: 400px;
+    width: 100%;
+    max-width: 800px;
+}
+.carousel__wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;   
+}
+.carousel__card{
+    position: absolute;
+    display:flex ;
+    flex:1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.15); 
+    box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 0.5s ease-in-out;
+}
+
+.carousel__card-active{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: visible;
+}
+
+.card__image{
+    width: 100%;
+    object-fit: cover;   
+}
+
+.carousel__overplay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.20);
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 30px;
+}
+.carousel__title{
+    color: white;
+    font-size: 30px;
+}
+.carousel__arrow_left , .carousel__arrow_right {
+    position: absolute;
+    font-size: 40px;
+    top:50%;
+    transform: translate(0, -50%);
+    background-color: gainsboro;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
+
+.carousel__arrow_left{
+    left: 15px;
+}
+.carousel__arrow_right{
+    right: 15px;
+    transform: translate(0,-25px);
+}
+.carousel__pagination{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.pagination__dot{
+    height: 10px ;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.pagination__dot-active:hover{
+    transform: scale(1.2); 
+}
+.pagination__dot-active{
+    background-color: steelblue;
+}
